@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPCL Fuel Daily Fuel Demand Predictor</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HPCL Fuel Daily Fuel Demand Predictor</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form id="predict-form" action="/predict" method="post">
+                <button id="predict-button" type="submit" class="btn">Predict</button>
+            </form>
+            <p id="predicting-message" style="display: none;">Model is predicting...</p>
+            <p id="download-message" style="display: none;">Prediction complete. <a id="download-link" href="#">Download Results</a></p>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HPCL Fuel Daily Fuel Demand Predictor</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("predict-form").addEventListener("submit", function() {
+            document.getElementById("predict-button").style.display = "none";
+            document.getElementById("predicting-message").style.display = "block";
+        });
+    </script>
+</body>
+</html>
